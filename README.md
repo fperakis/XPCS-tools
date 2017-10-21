@@ -1,5 +1,5 @@
 # XPCS-tools
-A collection of tools to analyse X-ray Photon Correlation Spectroscopy (XPCS) data based on sk
+A collection of tools to analyse X-ray Photon Correlation Spectroscopy (XPCS) data
 
 Includes code to calculate:
 * load data files (hdf5 from Eiger detector)
