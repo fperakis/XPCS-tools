@@ -20,7 +20,7 @@ def xray_parameters():
 
 def g2_parameters():
     inner_radius = 100           # radius of first ring
-    width        = 10            # width of rings
+    width        = 20            # width of rings
     spacing      = 0             # spacing between rings
     num_rings    = 1             # number of rings
     num_levels   = 1             # number of levels to calculate g2

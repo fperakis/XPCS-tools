@@ -40,14 +40,16 @@ def calculate_g2(data,mask=None,center=None):
 
     return qt,dt[1:],g2[1:],ring_mask
 
-def calculate_two_time_g2(data,mask=None):
+def calculate_two_time_g2(data,mask=None,center=None):
     '''
     Calculates the two-time intensity-intensity temporal autocorrelation using
     scikit-beam packages for a series of Q's
     '''
 
     # -- parameters
-    dpix,Ldet,center  = eiger_parameters()
+    dpix,Ldet,center_new  = eiger_parameters()
+    if center==None:
+        center = center_new
     energy,wavelenght = xray_parameters()
     inner_radius,width,spacing,num_rings,num_levels = g2_parameters()
 
@@ -67,7 +69,7 @@ def calculate_two_time_g2(data,mask=None):
 
     g2_t12=np.array(corr.two_time_corr(ring_mask,mask*data,n_frames,num_bufs,num_levels)[0])
 
-    return qt,g2_t12
+    return qt,g2_t12,ring_mask
 
 
 
